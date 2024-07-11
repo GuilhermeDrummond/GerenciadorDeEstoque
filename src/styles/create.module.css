@@ -1,0 +1,44 @@
+.createMenu {
+   display: flex;
+   justify-content: center;
+   margin-top: 2.4rem; /* 3rem * 0.8 */
+   gap: 8rem; /* 12.5rem * 0.8 */
+}
+
+.createMenu > div {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   gap: 0.8rem; /* 1rem * 0.8 */
+}
+
+.createMenu > div > label {
+   text-align: start;
+}
+
+.createMenu > div > input {
+   padding: 0.56rem; /* 0.7rem * 0.8 */
+   background-color: #0f0f0f;
+   color: aliceblue;
+   border-style: none;
+}
+
+.textArea {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   margin-top: 4rem; /* 5rem * 0.8 */
+   gap: 1.6rem; /* 2rem * 0.8 */
+}
+
+.textArea > textarea {
+   background-color: #0f0f0f;
+   border-style: none;
+   color: aliceblue;
+}
+
+.mainCreate {
+   display: flex;
+   align-items: center;
+}

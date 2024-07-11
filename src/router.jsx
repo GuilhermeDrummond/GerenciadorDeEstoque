@@ -1,21 +1,26 @@
+import { element } from "prop-types";
 import { createBrowserRouter } from "react-router-dom";
+import Home from "./pages/Home"
+import ItemsPage from "./pages/ItemsPage"
+import CreateItems from "./pages/CreatItem"
 
-const router = createBrowserRouter ([{
-    path:"/",
-    element: <RoottLayout />
-    children: [
-        {index: true, element: <Home />} ,
-        {
-            path: "items" , 
-            element: <ItemsLayout />
-            children: [
-                {index: true, element: <ListItems />}
-                {path: "new", element: <CreateItem />}
-                {path: ":id", element: <ShowItem />}
-                {path: ":id/update", element: <UpdateItem />}
-            ]
-        }
-    ]
-}])
+const router = createBrowserRouter ([
+    {
+     path:"/",
+     element: <Home />,
+    }
+    ,
+    {
+     path: "items" , 
+     element: <ItemsPage />,
+    }
+    ,
+    {
+        path: "create" ,
+        element: <CreateItems/>
+    }
+    
+    
+])
 
 export default router

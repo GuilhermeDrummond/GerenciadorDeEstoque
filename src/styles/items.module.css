@@ -1,0 +1,14 @@
+.itemData {
+    display: flex;
+    gap: 14.4rem; /* 18rem * 0.8 */
+    background-color: rgb(15, 15, 15);
+    margin-top: 1.6rem; /* 2rem * 0.8 */
+    padding: 1.6rem; /* 2rem * 0.8 */
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    gap: 14.64rem; /* 18.3rem * 0.8 */
+    margin-left: 1.2rem; /* 1.5rem * 0.8 */
+}
