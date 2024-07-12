@@ -46,13 +46,13 @@ export default function Home() {
       <div className="product-section">
         <div className="recent-products">
             <label htmlFor="">Product1</label>
-            <button>Ver</button>
+            <a href="/individual">ver</a>
         </div>
         <div className="end-products">
           
             <label htmlFor="">Product2</label>
             <h4>8</h4>
-            <button>Ver</button>
+            <a href="/individual">ver</a>
          
 
           

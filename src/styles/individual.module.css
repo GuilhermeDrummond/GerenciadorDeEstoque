@@ -1,0 +1,46 @@
+.itemData {
+    display: flex;
+    gap: 14.4rem; /* 18rem * 0.8 */
+    background-color: rgb(15, 15, 15);
+    margin-top: 1.6rem; /* 2rem * 0.8 */
+    padding: 1.6rem; /* 2rem * 0.8 */
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    gap: 32rem; /* 18.3rem * 0.8 */
+    margin-left: 1.2rem; /* 1.5rem * 0.8 */
+}
+
+.description>div {
+    display: flex;
+    gap: 2rem; 
+}
+
+.description>div>a {
+    display: flex;
+    gap: 2rem; 
+    background-color: #ffffff;
+    color: black;
+    padding: 0.2rem;
+    width: 3rem;
+    justify-content: center;
+}
+
+.itemInformation {
+    display: flex;
+    gap: 2rem;
+}
+
+
+.itemInformation>label {
+    display: flex;
+    
+    padding: 1rem;
+    width: 12rem;
+    text-align: center;
+    border-radius: 1rem;
+    background-color:rgb(22, 22, 22);
+    
+}

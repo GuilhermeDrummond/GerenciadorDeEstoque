@@ -39,6 +39,23 @@ main {
   gap: 2rem;
 }
 
+.recent-products>a {
+  background-color: #ffffff;
+  padding: 0.2rem;
+  width: 3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.end-products>a {
+  background-color: #ffffff;
+  padding: 0.2rem;
+  width: 3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+
+}
+
 .items-data {
   display: flex;
   gap: 1.6rem; /* 2rem * 0.8 */

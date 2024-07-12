@@ -1,6 +1,6 @@
 .itemData {
     display: flex;
-    gap: 14.4rem; /* 18rem * 0.8 */
+    gap: 11rem; /* 18rem * 0.8 */
     background-color: rgb(15, 15, 15);
     margin-top: 1.6rem; /* 2rem * 0.8 */
     padding: 1.6rem; /* 2rem * 0.8 */
@@ -9,6 +9,43 @@
 .description {
     display: flex;
     align-items: center;
-    gap: 14.64rem; /* 18.3rem * 0.8 */
+    gap: 11rem; /* 18.3rem * 0.8 */
     margin-left: 1.2rem; /* 1.5rem * 0.8 */
 }
+
+.description>div {
+    display: flex;
+    gap: 1rem; 
+}
+
+.description>div>a {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    color: black;
+    width: 2.5rem;
+}
+
+.mainCreate {
+    padding: 20px;
+ }
+ 
+ .createMenu div {
+    margin-bottom: 10px;
+ }
+ 
+ .textArea {
+    margin-top: 20px;
+ }
+ 
+ .itemsList {
+    margin-top: 30px;
+ }
+ 
+ .item {
+    display: flex;
+    gap: 4rem;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+ }
