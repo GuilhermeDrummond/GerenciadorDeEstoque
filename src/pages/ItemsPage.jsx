@@ -9,9 +9,19 @@ const ItemsPage = () => {
     useEffect(() => {
         const storedItems = localStorage.getItem('items');
         if (storedItems) {
-            setItems(JSON.parse(storedItems));
+            setItems(JSON.parse(storedItems.slice()));
         }
     }, []);
+    const saveItemsToLocalStorage = (items) => {
+        localStorage.setItem('items', JSON.stringify(items));
+    };
+  
+    const handleDeleteItem = (id) => {
+        const updatedItems = items.filter(item => item.id !== id);
+        setItems(updatedItems);
+        saveItemsToLocalStorage(updatedItems);
+    };
+    
 
     return (
         <div>
@@ -19,10 +29,10 @@ const ItemsPage = () => {
                 <nav>React Stock
                     <div className="menu">
                         <a href="/">Inicio</a>
-                        <a href="/create">Nove Item</a>
+                        <a href="/create">Novo Item</a>
                     </div>
                 </nav>
-                <ItemsList items={items} />
+                <ItemsList items={items} onDeleteItem={handleDeleteItem}/>
             </main>
         </div>
     );

@@ -1,51 +1,42 @@
-.itemData {
-    display: flex;
-    gap: 11rem; /* 18rem * 0.8 */
-    background-color: rgb(15, 15, 15);
-    margin-top: 1.6rem; /* 2rem * 0.8 */
-    padding: 1.6rem; /* 2rem * 0.8 */
-}
-
-.description {
-    display: flex;
-    align-items: center;
-    gap: 11rem; /* 18.3rem * 0.8 */
-    margin-left: 1.2rem; /* 1.5rem * 0.8 */
-}
-
-.description>div {
-    display: flex;
-    gap: 1rem; 
-}
-
-.description>div>a {
-    display: flex;
-    justify-content: center;
-    background-color: aliceblue;
-    color: black;
-    width: 2.5rem;
-}
 
 .mainCreate {
-    padding: 20px;
+    padding: 15px;
  }
  
  .createMenu div {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
  }
  
  .textArea {
-    margin-top: 20px;
+    margin-top: 16px;
  }
  
  .itemsList {
-    margin-top: 30px;
+    margin-top: 26px;
  }
  
  .item {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 7px;
+    margin-bottom: 8px;
+    align-items: center;
+    text-align: center;
+ }
+
+ .buttons{
+    display: flex;
+    gap: 0.5rem;
+ }
+ 
+ .buttons>a{
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    width: 2rem;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: small;
+    padding: 0.3rem;
  }

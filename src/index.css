@@ -15,7 +15,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 56rem; /* 70rem * 0.8 */
+  gap: 80rem; /* 70rem * 0.8 */
   background-color: #0f0f0f;
   padding: 0.64rem; /* 0.8rem * 0.8 */
   text-decoration: none;
@@ -32,11 +32,15 @@ nav {
 }
 
 main {
-  width: 80rem; /* 100rem * 0.8 */
+  width: 100rem; /* 100rem * 0.8 */
   display: flex;
   flex-direction: column;
   margin-top: 4rem; /* 6rem * 0.8 */
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.recent-products, .end-products{
+  width: 50%;
 }
 
 .recent-products>a {
@@ -58,7 +62,7 @@ main {
 
 .items-data {
   display: flex;
-  gap: 1.6rem; /* 2rem * 0.8 */
+  gap: 2.4rem; /* 2rem * 0.8 */
 }
 
 .dashboard-nav {
@@ -70,28 +74,15 @@ main {
 
 .product-section {
   display: flex;
-  gap: 12rem;
-  align-items: center;
-  
-}
-
-.recent-products {
-  display: flex;
-  gap: 22rem;
-  margin-left: 5rem;
-}
-
-.end-products {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
 
 .end-items {
   display: flex;
-  gap: 10rem; /* 12rem * 0.8 */
+  gap: 35rem; /* 12rem * 0.8 */
   justify-content: center;
   align-items: center;
   background-color: #0f0f0f;
@@ -102,7 +93,7 @@ main {
 
 .recent-items {
   display: flex;
-  gap: 20rem; /* 25rem * 0.8 */
+  gap: 35rem; /* 25rem * 0.8 */
   justify-content: center;
   align-items: center;
   background-color: #0f0f0f;

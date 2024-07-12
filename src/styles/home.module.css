@@ -1,0 +1,24 @@
+.mainCreate {
+    padding: 20px;
+ }
+ 
+ .createMenu div {
+    margin-bottom: 10px;
+ }
+ 
+ .textArea {
+    margin-top: 20px;
+ }
+ 
+ .itemsList {
+    margin-top: 30px;
+ }
+ 
+ .item {
+    display: flex;
+    gap: 4rem;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+ }
+

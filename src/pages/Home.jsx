@@ -1,5 +1,55 @@
+import ItemsList from './ItemsList';
+import { useState } from "react";
+import { useEffect } from "react";
+import styles from "../styles/home.module.css"
 
-export default function Home() {
+const ItemsPage = () => {
+  const [items, setItems] = useState([]);
+  const [lowQuantityItems, setLowQuantityItems] = useState([]);
+
+
+    useEffect(() => {
+        const storedItems = localStorage.getItem('items');
+
+        if (storedItems) {
+            const itemsArray = JSON.parse(storedItems);
+            // Ordenar os itens por id (assumindo que o id é a data de criação)
+            const sortedItems = itemsArray.sort((a, b) => b.id - a.id);
+            // Pegar os três itens mais recentes
+            setItems(sortedItems.slice(0, 5));
+            // Pegar os três itens cuja quantidade seja menor que 5
+            const filteredLowQuantityItems = itemsArray.filter(item => item.quantity < 5);
+            setLowQuantityItems(filteredLowQuantityItems.slice(0, 5));
+        }
+    }, []);
+    const saveItemsToLocalStorage = (items) => {
+      localStorage.setItem('items', JSON.stringify(items));
+  };
+
+  const handleDeleteItem = (id) => {
+      const updatedItems = items.filter(item => item.id !== id);
+      setItems(updatedItems);
+      saveItemsToLocalStorage(updatedItems);
+  };
+  const calculateTotalQuantities = (items) => {
+    let totalQuantity = 0;
+    items.forEach(item => {
+        totalQuantity += parseInt(item.quantity);
+    });
+    return totalQuantity;
+  };
+  const countItemsBelowFive = (items) => {
+    let count = 0;
+    items.forEach(item => {
+        if (parseInt(item.quantity) < 5) {
+            count++;
+        }
+    });
+    return count;
+};
+
+
+ 
   return (
     <main>
       <nav>
@@ -7,6 +57,8 @@ export default function Home() {
         <div className="menu">
           
           <a href= "/items" >Itens</a>
+          <a href="/create">Novo Item</a>
+
           
         </div>
       </nav>
@@ -15,49 +67,45 @@ export default function Home() {
       <div className="items-data">
         <div className="data1">
           <h4>Diversidade de Intens</h4>
-          <h1>5</h1>
+          <h1>{items.length}</h1>
         </div>
         <div className="data1">
           <h4>Quantidade de Intens</h4>
-          <h1>5</h1>
+          <h1>{calculateTotalQuantities(items)}</h1>
         </div>
         <div className="data1">
           <h4>Intens Recentes</h4>
-          <h1>5</h1>
+          <h1>{items.length}</h1>
         </div>
         <div className="data1">
           <h4>Intens Acabando</h4>
-          <h1>5</h1>
+          <h1>{countItemsBelowFive(items)}</h1>
         </div>
       </div>
       <div className="dashboard-nav">
         <div className="recent-items">
-          <label htmlFor="">Itens Recentes</label>
+          <label htmlFor="">Itens Recentes:</label>
           <label htmlFor="">Ações:</label>
         </div>
 
         <div className="end-items">
           <label htmlFor="">Itens Acabando</label>
-          <label htmlFor="">Qtd.</label>
           <label htmlFor="">Ações:</label>
         </div>
       </div>
 
       <div className="product-section">
         <div className="recent-products">
-            <label htmlFor="">Product1</label>
-            <a href="/individual">ver</a>
+    
+        <ItemsList items={items} onDeleteItem={handleDeleteItem} />
+            
         </div>
         <div className="end-products">
           
-            <label htmlFor="">Product2</label>
-            <h4>8</h4>
-            <a href="/individual">ver</a>
-         
-
+          <ItemsList items={lowQuantityItems} onDeleteItem={handleDeleteItem}/>
           
         </div>
       </div>
     </main>
   );
-}
+}; export default ItemsPage;

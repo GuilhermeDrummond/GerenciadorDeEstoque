@@ -1,1 +1,28 @@
+.createMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 3rem;
+}
 
+.createMenu>div{
+    display: flex ;
+    gap: 9rem;
+}
+
+.createMenu>div>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.createMenu>div>div>input{
+    padding: 0.8rem;
+    margin-top: 8px;
+}
+
+.textArea{
+    display: flex;
+    gap: 2rem;
+    
+}

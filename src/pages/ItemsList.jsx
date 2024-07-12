@@ -1,24 +1,37 @@
 import React from 'react';
 import styles from '../styles/items.module.css';
 
-const ItemsList = ({ items }) => {
+
+const ItemsList = ({ items, onDeleteItem }) => {
+    const handleDelete = (id) => {
+        onDeleteItem(id);
+    };
+
+    const calculateTotalQuantities = (items) => {
+        let totalQuantity = 0;
+        items.forEach(item => {
+            totalQuantity += parseInt(item.quantity);
+        });
+        return totalQuantity;
+    };
     return (
         <div className={styles.itemsList}>
             {items.map(item => (
                 <div className={styles.item} key={item.id}>
-                    <h4>ID: {item.id}</h4>
-                    <h4>Nome: {item.name}</h4>
-                    <h4>Qntd: {item.quantity}</h4>
-                    <h4>Preço: {item.price}</h4>
-                    <h4>Categoria: {item.category}</h4>
-                    <h4>Descrição: {item.description}</h4>
-                    <div className=''>
-                        <a href="/individual">ver</a>
-                        <a href="/edit">edit</a>
-                        <a href="">lixo</a>
+                    <h5>ID: {item.id}</h5>
+                    <h5>Nome: {item.name}</h5>
+                    <h5>Qntd: {item.quantity}</h5>
+                    <h5>Preço: {item.price}</h5>
+                    <h5>Categoria: {item.category}</h5>
+                    <h5>Descrição: {item.description}</h5>
+                    <div className={styles.buttons}>
+                        <a href="/individual">👁️</a>
+                        <a href="/edit">📝</a>
+                        <a href="#" onClick={() => handleDelete(item.id)}>🗑️</a>
                     </div>
                 </div>
             ))}
+            
         </div>
     );
 };

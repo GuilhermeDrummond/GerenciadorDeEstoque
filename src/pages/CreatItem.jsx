@@ -55,6 +55,7 @@ const CreateMenu = () => {
                 </nav>
                 <form className={styles.createMenu} onSubmit={handleSubmit}>
                     <div>
+                    <div>
                         <label htmlFor="name">Nome</label>
                         <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
@@ -70,12 +71,15 @@ const CreateMenu = () => {
                         <label htmlFor="category">Categoria</label>
                         <input type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} />
                     </div>
+                    </div>
+                    <div className={styles.textareaDiv}>
                     <div className={styles.textArea}>
                         <label htmlFor="description">Descrição</label>
-                        <textarea id="description" cols="150" rows="10" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                        <textarea id="description" cols="165" rows="10" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                         <div>
                             <button type="submit">Salvar</button>
                         </div>
+                    </div>
                     </div>
                 </form>
                 
