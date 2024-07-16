@@ -1,36 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home"
-import ItemsPage from "./pages/ItemsPage"
-import CreateItems from "./pages/CreatItem"
-import EditItem from "./pages/EditItem"
-import IndividualPage from "./pages/Individual"
+import Home from "./pages/Home";
+import ItemsPage from "./pages/ItemsPage";
+import CreateItems from "./pages/CreatItem";
+import EditItem from "./pages/EditItem";
+import Individual from "./pages/Individual";
 
-const router = createBrowserRouter ([
+const router = (items, setItems) => createBrowserRouter([
     {
-     path:"/",
-     element: <Home />,
-    }
-    ,
+        path: "/",
+        element: <Home />,
+    },
     {
-     path: "items" , 
-     element: <ItemsPage />,
-    }
-    ,
+        path: "items",
+        element: <ItemsPage items={items} setItems={setItems} />,
+    },
     {
-        path: "create" ,
-        element: <CreateItems/>
-    }
-    ,
+        path: "create",
+        element: <CreateItems items={items} setItems={setItems} />,
+    },
     {
-        path: "edit" ,
-        element: <EditItem/>
-    }
-    ,
+        path: "edit/:id",
+        element: <EditItem items={items} setItems={setItems} />,
+    },
     {
-        path: "individual" ,
-        element: <IndividualPage/>
-    }
-    
-])
+        path: "individual/:id",
+        element: <Individual items={items} />,
+    },
+]);
 
-export default router
+export default router;

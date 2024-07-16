@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../styles/items.module.css';
 
-
 const ItemsList = ({ items, onDeleteItem }) => {
     const handleDelete = (id) => {
         onDeleteItem(id);
@@ -10,10 +9,14 @@ const ItemsList = ({ items, onDeleteItem }) => {
     const calculateTotalQuantities = (items) => {
         let totalQuantity = 0;
         items.forEach(item => {
-            totalQuantity += parseInt(item.quantity);
+            const quantity = parseInt(item.quantity, 10);
+            if (!isNaN(quantity)) {
+                totalQuantity += quantity;
+            }
         });
         return totalQuantity;
     };
+
     return (
         <div className={styles.itemsList}>
             {items.map(item => (
@@ -25,13 +28,13 @@ const ItemsList = ({ items, onDeleteItem }) => {
                     <h5>Categoria: {item.category}</h5>
                     <h5>Descrição: {item.description}</h5>
                     <div className={styles.buttons}>
-                        <a href="/individual">👁️</a>
-                        <a href="/edit">📝</a>
+                        <a href={`/individual/${item.id}`}>ver</a>
+                        <a href={`/edit/${item.id}`}>📝</a>
                         <a href="#" onClick={() => handleDelete(item.id)}>🗑️</a>
                     </div>
+
                 </div>
             ))}
-            
         </div>
     );
 };

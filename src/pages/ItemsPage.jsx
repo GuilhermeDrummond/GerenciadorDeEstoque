@@ -1,7 +1,6 @@
-import styles from "../styles/items.module.css"
+import styles from "../styles/items.module.css";
 import ItemsList from './ItemsList';
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const ItemsPage = () => {
     const [items, setItems] = useState([]);
@@ -9,19 +8,19 @@ const ItemsPage = () => {
     useEffect(() => {
         const storedItems = localStorage.getItem('items');
         if (storedItems) {
-            setItems(JSON.parse(storedItems.slice()));
+            setItems(JSON.parse(storedItems));
         }
     }, []);
+
     const saveItemsToLocalStorage = (items) => {
         localStorage.setItem('items', JSON.stringify(items));
     };
-  
+
     const handleDeleteItem = (id) => {
         const updatedItems = items.filter(item => item.id !== id);
         setItems(updatedItems);
         saveItemsToLocalStorage(updatedItems);
     };
-    
 
     return (
         <div>
@@ -32,10 +31,11 @@ const ItemsPage = () => {
                         <a href="/create">Novo Item</a>
                     </div>
                 </nav>
-                <ItemsList items={items} onDeleteItem={handleDeleteItem}/>
+                <ItemsList items={items} onDeleteItem={handleDeleteItem} />
             </main>
         </div>
     );
 };
 
 export default ItemsPage;
+

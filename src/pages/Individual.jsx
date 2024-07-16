@@ -1,44 +1,52 @@
-import styles from "../styles/individual.module.css"
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import styles from '../styles/individual.module.css';
 
+const Individual = ({ items }) => {
+    const { id } = useParams();
 
-    const Item = () => {
-        return (
-            <div>
-                 <main>
-          
-                    <nav>React Stock
-            
-                        <div className="menu">
-                            <a href="/">Inicio</a>
-                            <a href="/items">Itens</a>
-                            
-                        </div>
-                        
-                    </nav>
+    // Adicionando uma verificação para garantir que items esteja definido
+    if (!items || items.length === 0) {
+        return <div>Carregando...</div>;
+    }
 
-                    <div className={styles.itemData}>
+    const item = items.find(item => item.id === parseInt(id, 10));
 
-                      <label htmlFor="">Nome do Produto:</label>
-                    
+    if (!item) {
+        return <div>Item não encontrado</div>;
+    }
+
+    return (
+        <div className={styles.itemDetail}>
+            <main>
+                <nav>React Stock
+                    <div className="menu">
+                        <a href="/">Inicio</a>
+                        <a href="/items">Itens</a>
                     </div>
-                    <div className={styles.description}>
-                      <h4>Iphone</h4>
-                      <div>
-                        <a href="/edit">edit</a>
-                        <a href="">lixo</a>
-                      </div>
-                      
+                </nav>
+                <div className={styles.itemData}>
+                    <label htmlFor="">Nome do Produto:</label>
+                    <h4>{item.name}</h4>
+                </div>
+                <div className={styles.description}>
+                    <label htmlFor="">Descrição:</label>
+                    <p>{item.description}</p>
+                </div>
+                <div className={styles.itemInformation}>
+                    <label htmlFor="">ID:</label>
+                    <p>{item.id}</p>
+                    <label htmlFor="">Categoria:</label>
+                    <p>{item.category}</p>
+                    <label htmlFor="">Qntd:</label>
+                    <p>{item.quantity}</p>
+                    <label htmlFor="">Preço:</label>
+                    <p>{item.price}</p>
+                </div>
+            </main>
+        </div>
+    );
+};
 
-                    </div>
+export default Individual;
 
-                    <div className={styles.itemInformation}>
-                        <label htmlFor="">Categoria:</label>
-                        <label htmlFor="">Qntd:</label>
-                        <label htmlFor="">Preço:</label>
-                    </div>
-
-                </main>
-            </div>
-        );
-    };
-    export default Item;
