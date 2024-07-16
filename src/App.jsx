@@ -3,9 +3,15 @@ import { RouterProvider } from 'react-router-dom';
 import router from './router';
 
 const App = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')) || []);
 
-    useEffect(() => {
+    const handleDeleteItem = (id) => {
+        const updatedItems = items.filter(item => item.id !== id);
+        setItems(updatedItems);
+        localStorage.setItem('items', JSON.stringify(updatedItems));
+    };
+
+   useEffect(() => {
         const storedItems = localStorage.getItem('items');
         if (storedItems) {
             setItems(JSON.parse(storedItems));
@@ -13,7 +19,7 @@ const App = () => {
     }, []);
 
     return (
-        <RouterProvider router={router(items, setItems)} />
+        <RouterProvider router={router(items, setItems, handleDeleteItem)} />
     );
 };
 

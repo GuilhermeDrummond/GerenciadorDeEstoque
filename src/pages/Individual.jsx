@@ -1,11 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import styles from '../styles/individual.module.css';
+import { useNavigate } from 'react-router-dom';
 
-const Individual = ({ items }) => {
+const Individual = ({ items, onDeleteItem }) => {
     const { id } = useParams();
+    const navigate = useNavigate();
 
-    // Adicionando uma verificação para garantir que items esteja definido
     if (!items || items.length === 0) {
         return <div>Carregando...</div>;
     }
@@ -16,6 +17,10 @@ const Individual = ({ items }) => {
         return <div>Item não encontrado</div>;
     }
 
+    const handleDelete = (id) => {
+        onDeleteItem(id);
+        navigate('/');
+    };
     return (
         <div className={styles.itemDetail}>
             <main>
@@ -34,14 +39,15 @@ const Individual = ({ items }) => {
                     <p>{item.description}</p>
                 </div>
                 <div className={styles.itemInformation}>
-                    <label htmlFor="">ID:</label>
-                    <p>{item.id}</p>
-                    <label htmlFor="">Categoria:</label>
-                    <p>{item.category}</p>
-                    <label htmlFor="">Qntd:</label>
-                    <p>{item.quantity}</p>
-                    <label htmlFor="">Preço:</label>
-                    <p>{item.price}</p>
+                    <label htmlFor="">ID:<p>{item.id}</p></label>
+                    
+                    <label htmlFor="">Categoria:<p>{item.category}</p></label>
+                    
+                    <label htmlFor="">Qntd:<p>{item.quantity}</p></label>
+                    
+                    <label htmlFor="">Preço:<p>R$ {item.price}</p></label>
+
+                    
                 </div>
             </main>
         </div>

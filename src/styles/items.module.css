@@ -40,3 +40,73 @@
     font-size: small;
     padding: 0.3rem;
  }
+
+ 
+ .modal {
+   display: flex;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgba(0, 0, 0); /* Fundo levemente apagado */
+   padding: 20px;
+   z-index: 1000; /* Para garantir que o modal esteja na frente de outros elementos */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 80%;
+   max-width: 600px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+   margin-bottom: 20px;
+}
+
+.modal form {
+   width: 100%;
+}
+
+.modal form > div {
+   margin-bottom: 15px;
+}
+
+.modal label {
+   display: block;
+   margin-bottom: 5px;
+}
+
+.modal input,
+.modal textarea {
+   width: 70%;
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   resize: vertical;
+}
+
+.modal button {
+   margin-top: 10px;
+   padding: 10px 20px;
+   background-color: #007bff;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+   background-color: #0056b3;
+}
+
+.modal button[type="button"] {
+   background-color: #6c757d;
+}
+
+.modal button[type="button"]:hover {
+   background-color: #5a6268;
+}
