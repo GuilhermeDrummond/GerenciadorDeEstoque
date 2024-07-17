@@ -57,25 +57,25 @@ const CreateMenu = () => {
                     <div>
                     <div>
                         <label htmlFor="name">Nome</label>
-                        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Exemplo: Celular" required/>
                     </div>
                     <div>
                         <label htmlFor="quantity">Qntd</label>
-                        <input type="number" id="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                        <input type="number" id="quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="Exemplo: 3" required/>
                     </div>
                     <div>
                         <label htmlFor="price">Preço</label>
-                        <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                        <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Exemplo: 123,45" required/>
                     </div>
                     <div>
                         <label htmlFor="category">Categoria</label>
-                        <input type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} />
+                        <input type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Exemplo: Eletrônicos" required/>
                     </div>
                     </div>
                     <div className={styles.textareaDiv}>
                     <div className={styles.textArea}>
                         <label htmlFor="description">Descrição</label>
-                        <textarea id="description" cols="165" rows="10" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                        <textarea id="description" cols="165" rows="10" value={description} onChange={(e) => setDescription(e.target.value)} maxlength="20" placeholder="Descrição breve, máximo de 20 caracteres;" ></textarea>
                         <div>
                             <button type="submit">Salvar</button>
                         </div>

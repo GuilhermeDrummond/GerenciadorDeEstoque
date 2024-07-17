@@ -72,8 +72,8 @@ const ItemsList = ({ items, onDeleteItem }) => {
                     <h5>Descrição: {item.description}</h5>
                     <div className={styles.buttons}>
                         <Link to={`/individual/${item.id}`}>Ver</Link>
-                        <button onClick={() => openEditModal(item.id)}>Editar</button>
-                        <button onClick={() => handleDelete(item.id)}>Excluir</button>
+                        <button onClick={() => openEditModal(item.id)}>Edit</button>
+                        <button onClick={() => handleDelete(item.id)}>Lixo</button>
                     </div>
                     {editItemId === item.id && (
                         <div className={styles.modal}>

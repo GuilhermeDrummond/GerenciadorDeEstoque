@@ -8,7 +8,7 @@
 
 .createMenu>div{
     display: flex ;
-    gap: 9rem;
+    gap: 12rem;
 }
 
 .createMenu>div>div{
@@ -21,9 +21,22 @@
     margin-top: 8px;
 }
 
+.textAreaDiv{
+    display: flex;
+    justify-content: center;
+}
+
 .textArea{
     display: flex;
     gap: 2rem;
     
 }
 
+@media (max-width: 1200px) {
+
+    .textArea{
+        width: 85%;
+    }
+
+   
+}

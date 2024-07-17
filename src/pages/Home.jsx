@@ -63,7 +63,7 @@ const ItemsPage = () => {
         </div>
       </nav>
 
-      <h1>Dashboard</h1>
+      <h2>Dashboard</h2>
       <div className="items-data">
         <div className="data1">
           <h4>Diversidade de Intens</h4>
